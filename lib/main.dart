@@ -1,4 +1,5 @@
-import 'package:cupid/Screens/confession_screen.dart';
+import 'package:cupid/Screens/chat_screen.dart';
+import 'package:cupid/Screens/park_list.dart';
 import 'package:cupid/provider/confession_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: 'Cupid - KoyCoders',
           theme: ThemeData(
             // useMaterial3: true,
             // This is the theme of your application.
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
             // is not restarted.
             primarySwatch: Colors.blue,
           ),
-          home: const ConfessionScreeen()),
+          home: const ChatScreen()),
     );
   }
 }
