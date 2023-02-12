@@ -64,8 +64,8 @@ class _ParkListScreenState extends State<ParkListScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage(ImageClass.sahyapark),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/images/sahya.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -91,8 +91,8 @@ class _ParkListScreenState extends State<ParkListScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage(ImageClass.ulPark),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/images/ulpark.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -118,8 +118,8 @@ class _ParkListScreenState extends State<ParkListScreen> {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: AssetImage(ImageClass.businesspark),
+                    image: const DecorationImage(
+                      image: AssetImage('assets/images/businesspark.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
