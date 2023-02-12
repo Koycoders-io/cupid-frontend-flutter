@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 class ConfessionProvider extends ChangeNotifier {
   final String getAllConfessionUrl =
-      'http://139.144.5.225/confession/api/v1/sahya/list/';
+      'https://qa.api.cupid.koycoders.in/confession/api/v1/sahya/list/';
   GetAllConfession? getConfessionData;
 
   bool isLoading = false;
