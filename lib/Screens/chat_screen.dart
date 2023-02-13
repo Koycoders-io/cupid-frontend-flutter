@@ -195,22 +195,19 @@ class _ChatScreenState extends State<ChatScreen> {
                 const SizedBox(
                   height: 12,
                 ),
-                snapshot.getConfessionData != null ||
+                snapshot.getConfessionData == null ||
                         snapshot.getConfessionData!.results.isEmpty
-                    ? Expanded(
+                    ? const Expanded(
                         child: Center(
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 35),
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: const DecorationImage(
-                              image: AssetImage('assets/images/nodata.png'),
-                              fit: BoxFit.cover,
-                            ),
+                          child: Text(
+                            'No data found! 🤪',
+                            style: TextStyle(
+                                color: ColorClass.blackColor,
+                                fontSize: 26,
+                                fontWeight: FontWeight.w400),
                           ),
                         ),
-                      ))
+                      )
                     : Consumer<ConfessionProvider>(
                         builder: (context, snapshot, _) => snapshot.isLoading ||
                                 snapshot.getConfessionData == null
