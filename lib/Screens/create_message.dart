@@ -1,5 +1,6 @@
 import 'package:cupid/provider/confession_provider.dart';
 import 'package:cupid/utils/color_class.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
@@ -73,7 +74,7 @@ class _CreateMessageState extends State<CreateMessage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       TextField(
-                        controller: messageController,
+                        controller: nicknameController,
                         decoration: const InputDecoration(
                             hintText: "LoveBug, Angel, mermaid, etc.",
                             label: Text('Nickname'),
@@ -89,23 +90,30 @@ class _CreateMessageState extends State<CreateMessage> {
                         height: 20,
                       ),
                       Row(
-                        children: [
-                          const Text('Your Gender',
+                        children: const [
+                          Text('Your Gender',
                               style: TextStyle(
                                   color: ColorClass.primaryColorDark,
                                   fontSize: 20,
                                   fontWeight: FontWeight.w400)),
-                          const SizedBox(
+                          SizedBox(
                             width: 10,
                           ),
-                          const Text('||',
+                          Text('||',
                               style: TextStyle(
                                   color: ColorClass.greyColor,
                                   fontSize: 25,
                                   fontWeight: FontWeight.w400)),
-                          const SizedBox(
+                          SizedBox(
                             width: 10,
                           ),
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
                           InkWell(
                             onTap: () {
                               snapshot.setGenderId = 1;
@@ -302,7 +310,9 @@ class _CreateMessageState extends State<CreateMessage> {
                           ),
                           Expanded(
                             child: ElevatedButton.icon(
-                              onPressed: () {},
+                              onPressed: () {
+                                _showDialog(context);
+                              },
                               style: ElevatedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(
                                     vertical: 15, horizontal: 0),
@@ -323,6 +333,37 @@ class _CreateMessageState extends State<CreateMessage> {
               ],
             )),
       ),
+    );
+  }
+
+  _showDialog(BuildContext context) {
+    showDialog(
+      builder: (context) => CupertinoAlertDialog(
+        title: Column(
+          children: const <Widget>[
+            // Text("ഒകെ ഡാ."),
+            Icon(
+              Icons.favorite,
+              color: Colors.red,
+            ),
+          ],
+        ),
+        content: const Text("ഇപ്പൊ ശെരി ആക്കി തരാം 🥳"),
+        actions: <Widget>[
+          Consumer<ConfessionProvider>(
+            builder: (context, snapshot, child) => CupertinoDialogAction(
+              child: const Text("അതു എന്താണ് 😌"),
+              onPressed: () {
+                snapshot.retriveUser(
+                    context: context,
+                    message: messageController.text,
+                    nickname: nicknameController.text);
+              },
+            ),
+          ),
+        ],
+      ),
+      context: context,
     );
   }
 }

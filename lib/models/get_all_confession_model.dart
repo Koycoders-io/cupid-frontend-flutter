@@ -19,14 +19,14 @@ class GetAllConfession {
   });
 
   final int count;
-  final String next;
+  String next;
   final String previous;
   final List<Result> results;
 
   factory GetAllConfession.fromJson(Map<String, dynamic> json) =>
       GetAllConfession(
         count: json["count"] ?? 0,
-        next: json["next"] ?? '',
+        next: json["next"] ?? 'null',
         previous: json["previous"] ?? '',
         results:
             List<Result>.from(json["results"].map((x) => Result.fromJson(x))),

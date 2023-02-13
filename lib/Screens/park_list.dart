@@ -50,6 +50,7 @@ class _ParkListScreenState extends State<ParkListScreen> {
               const SizedBox(
                 height: 35,
               ),
+
               InkWell(
                 onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {

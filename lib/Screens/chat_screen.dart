@@ -16,14 +16,24 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   void initState() {
     log('message');
     Future.microtask(() {
-      Provider.of<ConfessionProvider>(context, listen: false)
-          .getAllConfession();
+      ConfessionProvider confessionProvider =
+          Provider.of<ConfessionProvider>(context, listen: false);
+      confessionProvider.getAllConfession();
+      _scrollController.addListener(() {
+        if (_scrollController.position.pixels ==
+                _scrollController.position.maxScrollExtent &&
+            confessionProvider.getConfessionData!.next != 'null') {
+          confessionProvider
+              .getPaginated(confessionProvider.getConfessionData!.next);
+        }
+      });
     });
-
     super.initState();
   }
 
@@ -173,7 +183,8 @@ class _ChatScreenState extends State<ChatScreen> {
                         )
                       : Expanded(
                           child: ListView.builder(
-                              physics: const BouncingScrollPhysics(),
+                              controller: _scrollController,
+                              // physics: const BouncingScrollPhysics(),
                               itemCount:
                                   snapshot.getConfessionData!.results.length,
                               itemBuilder: (context, index) {
@@ -237,6 +248,11 @@ class _ChatScreenState extends State<ChatScreen> {
                                       ],
                                     ));
                               }))),
+              if (context.read<ConfessionProvider>().isPaginationLoading)
+                Container(
+                  alignment: Alignment.center,
+                  child: const CircularProgressIndicator(),
+                )
             ],
           )),
     );
