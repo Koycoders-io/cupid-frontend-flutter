@@ -32,7 +32,7 @@ class _ParkListScreenState extends State<ParkListScreen> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: SvgPicture.asset(
-                      '/images/koco.svg',
+                      'assets/images/koco.svg',
                     ),
                   ),
                 ],
