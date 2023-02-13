@@ -1,6 +1,5 @@
 import 'package:cupid/Screens/chat_screen.dart';
 import 'package:cupid/utils/color_class.dart';
-import 'package:cupid/utils/image_class.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

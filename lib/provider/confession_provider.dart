@@ -5,6 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class ConfessionProvider extends ChangeNotifier {
+  /// -[selectedGenderId] = 0 Male
+  /// -[selectedGenderId] = 1 Female
+  /// -[selectedGenderId] = 2 Others
+  int selectedGenderId = 1;
+
+  set setGenderId(int value) {
+    selectedGenderId = value;
+    notifyListeners();
+  }
+
   final String getAllConfessionUrl =
       'https://qa.api.cupid.koycoders.in/confession/api/v1/sahya/list/';
   GetAllConfession? getConfessionData;
