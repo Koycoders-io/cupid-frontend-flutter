@@ -1,3 +1,4 @@
+import 'package:cupid/Screens/chat_screen.dart';
 import 'package:cupid/Screens/create_message.dart';
 import 'package:cupid/Screens/park_list.dart';
 import 'package:cupid/provider/confession_provider.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
             // is not restarted.
             primarySwatch: Colors.pink,
           ),
-          home: const ParkListScreen()),
+          home: const ChatScreen()),
     );
   }
 }

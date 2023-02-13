@@ -52,8 +52,8 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 5.0),
                       padding: const EdgeInsets.symmetric(horizontal: 0.0),
-                      width: 50,
-                      height: 50,
+                      width: 30,
+                      height: 30,
                       decoration: BoxDecoration(
                         color: ColorClass.whiteColor,
                         borderRadius: BorderRadius.circular(10),
@@ -63,7 +63,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           'M',
                           style: TextStyle(
                               color: ColorClass.primaryColorDark,
-                              fontSize: 23,
+                              fontSize: 18,
                               fontWeight: FontWeight.w400),
                         ),
                       ),
@@ -74,8 +74,8 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 5.0),
                       padding: const EdgeInsets.symmetric(horizontal: 0.0),
-                      width: 50,
-                      height: 50,
+                      width: 30,
+                      height: 30,
                       decoration: BoxDecoration(
                         color: ColorClass.whiteColor,
                         borderRadius: BorderRadius.circular(10),
@@ -85,7 +85,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           'F',
                           style: TextStyle(
                               color: ColorClass.primaryColorDark,
-                              fontSize: 23,
+                              fontSize: 18,
                               fontWeight: FontWeight.w400),
                         ),
                       ),
@@ -96,8 +96,8 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: Container(
                       margin: const EdgeInsets.symmetric(horizontal: 5.0),
                       padding: const EdgeInsets.symmetric(horizontal: 0.0),
-                      width: 50,
-                      height: 50,
+                      width: 30,
+                      height: 30,
                       decoration: BoxDecoration(
                         color: ColorClass.whiteColor,
                         borderRadius: BorderRadius.circular(10),
@@ -107,7 +107,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           'A',
                           style: TextStyle(
                               color: ColorClass.primaryColorDark,
-                              fontSize: 23,
+                              fontSize: 18,
                               fontWeight: FontWeight.w400),
                         ),
                       ),
