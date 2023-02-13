@@ -15,13 +15,20 @@ class ConfessionProvider extends ChangeNotifier {
   /// -[selectedGenderId] = 2 Others
   int selectedGenderId = 1;
   String userUuid = '';
+  // $orgname', 'ul-cyberpark', 'business-park')
+  String orgname = '';
+
+  set setOrgName(String value) {
+    orgname = value;
+
+    notifyListeners();
+  }
+
   set setGenderId(int value) {
     selectedGenderId = value;
     notifyListeners();
   }
 
-  final String getAllConfessionUrl =
-      'https://qa.api.cupid.koycoders.in/confession/api/v1/sahya/list/';
   final String retrieveUserUrl =
       'https://qa.api.cupid.koycoders.in/confession/api/v1/user/retrieve/';
   GetAllConfession? getConfessionData;
@@ -33,7 +40,8 @@ class ConfessionProvider extends ChangeNotifier {
       isLoading = true;
 
       notifyListeners();
-      final response = await http.get(Uri.parse(getAllConfessionUrl));
+      final response = await http.get(Uri.parse(
+          'https://qa.api.cupid.koycoders.in/confession/api/v1/$orgname/list/'));
       if (response.statusCode == 200) {
         log(response.body.toString());
         getConfessionData = getAllConfessionFromJson(response.body);
@@ -110,14 +118,14 @@ class ConfessionProvider extends ChangeNotifier {
       BuildContext context) async {
     try {
       if (userUuid.isEmpty) {
-        log(userUuid + ' not found');
+        log('$userUuid not found');
         return;
       } else {
         var headers = {'Authorization': userUuid};
         var request = http.MultipartRequest(
             'POST',
             Uri.parse(
-                'https://qa.api.cupid.koycoders.in/confession/api/v1/sahya/create/'));
+                'https://qa.api.cupid.koycoders.in/confession/api/v1/$orgname/create/'));
         request.fields.addAll({
           'message': message,
           'nickname': nickName,
@@ -152,6 +160,48 @@ class ConfessionProvider extends ChangeNotifier {
       }
     } catch (e) {
       log(e.toString());
+    }
+  }
+
+  Future<void> searchConfessions(String keyword) async {
+    try {
+      isLoading = true;
+
+      notifyListeners();
+      final response = await http.get(Uri.parse(
+          'https://qa.api.cupid.koycoders.in/confession/api/v1/$orgname/list/?q=$keyword'));
+      if (response.statusCode == 200) {
+        log(response.body.toString());
+        getConfessionData = getAllConfessionFromJson(response.body);
+        isLoading = false;
+        notifyListeners();
+      } else {
+        throw Exception('Failed to load');
+      }
+    } catch (e) {
+      isLoading = false;
+      notifyListeners();
+    }
+  }
+
+  Future<void> genderFilterConfessions(String gender) async {
+    try {
+      isLoading = true;
+
+      notifyListeners();
+      final response = await http.get(Uri.parse(
+          'https://qa.api.cupid.koycoders.in/confession/api/v1/$orgname/list/?gender=$gender'));
+      if (response.statusCode == 200) {
+        log(response.body.toString());
+        getConfessionData = getAllConfessionFromJson(response.body);
+        isLoading = false;
+        notifyListeners();
+      } else {
+        throw Exception('Failed to load');
+      }
+    } catch (e) {
+      isLoading = false;
+      notifyListeners();
     }
   }
 
