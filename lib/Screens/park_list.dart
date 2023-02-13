@@ -32,7 +32,7 @@ class _ParkListScreenState extends State<ParkListScreen> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: SvgPicture.asset(
-                      'assets/images/koco.svg',
+                      '/images/koco.svg',
                     ),
                   ),
                 ],
@@ -65,7 +65,7 @@ class _ParkListScreenState extends State<ParkListScreen> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                     image: const DecorationImage(
-                      image: AssetImage('assets/images/sahya.png'),
+                      image: AssetImage('/images/sahya.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -92,7 +92,7 @@ class _ParkListScreenState extends State<ParkListScreen> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                     image: const DecorationImage(
-                      image: AssetImage('assets/images/ulpark.png'),
+                      image: AssetImage('/images/ulpark.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -119,7 +119,7 @@ class _ParkListScreenState extends State<ParkListScreen> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                     image: const DecorationImage(
-                      image: AssetImage('assets/images/businesspark.png'),
+                      image: AssetImage('/images/businesspark.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
