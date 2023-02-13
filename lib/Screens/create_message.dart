@@ -47,17 +47,20 @@ class _CreateMessageState extends State<CreateMessage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: const [
-                    Text(
-                      "Spill it...",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 30,
-                          fontWeight: FontWeight.w400),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 18.0),
+                      child: Text(
+                        "Spill it...",
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(
-                  height: 35,
+                  height: 15,
                 ),
                 Container(
                   padding: const EdgeInsets.all(20.0),
