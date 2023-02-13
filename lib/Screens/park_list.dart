@@ -82,7 +82,7 @@ class _ParkListScreenState extends State<ParkListScreen> {
                             "Sahya",
                             style: TextStyle(
                                 color: Color(0xFFFFFFFF),
-                                fontSize: 36,
+                                fontSize: 28,
                                 fontWeight: FontWeight.w400),
                           ),
                         ),
@@ -121,7 +121,7 @@ class _ParkListScreenState extends State<ParkListScreen> {
                             "UL",
                             style: TextStyle(
                                 color: Color(0xFFFFFFFF),
-                                fontSize: 36,
+                                fontSize: 28,
                                 fontWeight: FontWeight.w400),
                           ),
                         ),
@@ -161,7 +161,7 @@ class _ParkListScreenState extends State<ParkListScreen> {
                             "Business Park",
                             style: TextStyle(
                                 color: Color(0xFFFFFFFF),
-                                fontSize: 36,
+                                fontSize: 28,
                                 fontWeight: FontWeight.w400),
                           ),
                         ),
