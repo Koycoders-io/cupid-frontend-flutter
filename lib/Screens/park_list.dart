@@ -74,14 +74,20 @@ class _ParkListScreenState extends State<ParkListScreen> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: const Center(
-                        child: Text(
-                      "Sahya",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 100,
-                          fontWeight: FontWeight.w400),
-                    )),
+                    child: Row(
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.all(30.0),
+                          child: Text(
+                            "Sahya",
+                            style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontSize: 36,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -107,14 +113,20 @@ class _ParkListScreenState extends State<ParkListScreen> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: const Center(
-                        child: Text(
-                      "UL",
-                      style: TextStyle(
-                          color: Color(0xFFFFFFFF),
-                          fontSize: 100,
-                          fontWeight: FontWeight.w400),
-                    )),
+                    child: Row(
+                      children: const [
+                        Padding(
+                          padding: EdgeInsets.all(30.0),
+                          child: Text(
+                            "UL",
+                            style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontSize: 36,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -140,15 +152,21 @@ class _ParkListScreenState extends State<ParkListScreen> {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    child: const Center(
-                        child: Text(
-                      "Business\nPark",
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 60,
-                          fontWeight: FontWeight.w400),
-                    )),
+                    child: Row(
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: [
+                        const Padding(
+                          padding: EdgeInsets.all(30.0),
+                          child: Text(
+                            "Business Park",
+                            style: TextStyle(
+                                color: Color(0xFFFFFFFF),
+                                fontSize: 36,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 )
               ],
