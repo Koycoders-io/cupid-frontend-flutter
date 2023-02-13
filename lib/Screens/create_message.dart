@@ -1,5 +1,6 @@
 import 'package:cupid/provider/confession_provider.dart';
 import 'package:cupid/utils/color_class.dart';
+import 'package:floating_snackbar/floating_snackbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -311,7 +312,17 @@ class _CreateMessageState extends State<CreateMessage> {
                           Expanded(
                             child: ElevatedButton.icon(
                               onPressed: () {
-                                _showDialog(context);
+                                if (messageController.text.isEmpty) {
+                                  FloatingSnackBar(
+                                      message: 'Enter a message',
+                                      context: context);
+                                } else if (nicknameController.text.isEmpty) {
+                                  FloatingSnackBar(
+                                      message: 'Enter a nickname',
+                                      context: context);
+                                } else {
+                                  _showDialog(context);
+                                }
                               },
                               style: ElevatedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(
@@ -352,7 +363,7 @@ class _CreateMessageState extends State<CreateMessage> {
         actions: <Widget>[
           Consumer<ConfessionProvider>(
             builder: (context, snapshot, child) => CupertinoDialogAction(
-              child: const Text("അതു എന്താണ് 😌"),
+              child: const Text("വേഗം ആവട്ടെ 😌"),
               onPressed: () {
                 snapshot.retriveUser(
                     context: context,

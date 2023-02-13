@@ -7,6 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'dart:js' as js;
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
@@ -139,16 +140,24 @@ class _ChatScreenState extends State<ChatScreen> {
                           fontWeight: FontWeight.w400),
                     ),
                   )),
-                  Container(
-                    padding: const EdgeInsets.all(8.0),
-                    width: 50,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: ColorClass.primaryColorDark,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: SvgPicture.asset(
-                      'assets/images/koco.svg',
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        js.context
+                            .callMethod('open', ['https://koycoders.in/']);
+                      });
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(8.0),
+                      width: 50,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: ColorClass.primaryColorDark,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: SvgPicture.asset(
+                        'assets/images/koco.svg',
+                      ),
                     ),
                   ),
                 ],
