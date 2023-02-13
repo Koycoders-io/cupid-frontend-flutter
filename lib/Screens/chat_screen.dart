@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:cupid/Screens/create_message.dart';
 import 'package:cupid/provider/confession_provider.dart';
 import 'package:cupid/utils/color_class.dart';
 import 'package:flutter/cupertino.dart';
@@ -31,7 +32,11 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         backgroundColor: ColorClass.primaryColorDark,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const CreateMessage();
+          }));
+        },
         child: const Icon(Icons.add),
       ),
       backgroundColor: ColorClass.primaryColor,
